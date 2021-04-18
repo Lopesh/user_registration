@@ -1,0 +1,50 @@
+<div class="navbar-custom">
+  <div class="container-fluid">
+    <%if current_user.present? %>
+      <ul class="list-unstyled topnav-menu float-right mb-0">
+        <li class="dropdown notification-list topbar-dropdown">
+          <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+            
+            <span class="pro-user-name ml-1">
+            <%= current_user.email %> <i class="mdi mdi-chevron-down"></i>
+            </span>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
+            <!-- item-->
+            <div class="dropdown-header noti-title">
+              <h6 class="text-overflow m-0">Welcome !</h6>
+            </div>
+            <!-- item-->
+            <a href="#" class="dropdown-item notify-item">
+              <i class="fe-user"></i>
+              <span>My Account</span>
+            </a>
+            <div class="dropdown-divider"></div>
+            <!-- item-->
+            <%= link_to '<i class="fe-log-out"></i> Logout'.html_safe, destroy_user_session_path, :method=>'delete' ,:class=>"dropdown-item notify-item"%>
+            </a>
+          </div>
+        </li>
+        <!-- <li class="dropdown notification-list">
+          <a href="javascript:void(0);" class="nav-link right-bar-toggle waves-effect waves-light">
+          <i class="fe-settings noti-icon"></i>
+          </a>
+        </li> -->
+      </ul>
+    <%end%>
+    <div class="logo-box">
+        <a href="<%= root_url%>" class="logo text-center">
+            <span class="logo-lg">
+                <%#=  image_tag "logo-dark.png", :alt=>"", :height=>"18" %>
+                <span class="logo-lg-text-dark"></span>
+            </span>
+            <span class="logo-sm">
+                <span class="logo-sm-text-dark"></span>
+                <%#=  image_tag "logo-sm.png" ,:alt=>"" ,:height=>"24" %>
+            </span>
+        </a>
+    </div>
+    <!-- LOGO -->
+    <div class="clearfix"></div>
+  </div>
+</div>

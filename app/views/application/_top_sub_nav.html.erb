@@ -1,0 +1,21 @@
+<div class="topnav shadow-sm">
+  <div class="container-fluid">
+    <nav class="navbar navbar-light navbar-expand-lg topnav-menu">
+      <div class="collapse navbar-collapse" id="topnav-menu-content">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+              <%= top_navbar_elements("Profile", self_profile_user_path(current_user), {anchor_class: "nav-link", icon_class: ""})%>
+            </li>
+            <li class="nav-item">
+              <%= top_navbar_elements("Users", users_path, {anchor_class: "nav-link", icon_class: ""})%>
+            </li>
+           
+        </ul>
+        <!-- end navbar-->
+      </div>
+      <!-- end .collapsed-->
+    </nav>
+  </div>
+  <!-- end container-fluid -->
+</div>
+<!-- end topnav-->

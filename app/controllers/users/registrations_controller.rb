@@ -7,10 +7,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
     private
       def sign_up_params
           params.require(:user).permit(
+            :name,
             :email, 
             :password, 
             :password_confirmation,
-            profile_attributes: [ :address_line, :street, :landmark, :city, :state, :pin_code ]
+            profile_attributes: [ :address_line, :street, :landmark, :city, :state, :pin_code, :avatar ]
           )
       end
 end
