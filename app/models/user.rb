@@ -5,5 +5,7 @@ class User < ApplicationRecord
   
   has_one :profile, class_name: 'UserProfile'
 
-  accepts_nested_attributes_for :profile  
+  accepts_nested_attributes_for :profile
+  
+  enum role: { admin: 1 , normal_user: 2 }
 end

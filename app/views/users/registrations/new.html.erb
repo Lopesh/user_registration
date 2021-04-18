@@ -1,12 +1,23 @@
-<%= form_for(@user, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-  <%= render 'user_login_form', f: f %>
-  <%= f.fields_for :profile do |profile_fields| %>
-    <%= render 'profile_form', profile_fields: profile_fields %>
-  <% end %>  
-  <div class="actions">
-    <%= f.submit "Sign up" %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 col-lg-12 col-xl-5">
+      <div class="card bg-pattern">
+        <div class="card-body p-4">
+          <%= form_for(@user, url: registration_path(resource_name)) do |f| %>
+            <div class="row">
+              <%= render "devise/shared/error_messages", resource: resource %>
+              <%= render 'user_login_form', f: f %>
+              <%= f.fields_for :profile do |profile_fields| %>
+                <%= render 'profile_form', profile_fields: profile_fields %>
+              <% end %> 
+            </div>
+            <div class="actions">
+              <%= f.submit "Sign Up", class: 'btn btn-primary' %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
-<% end %>
-
+</div>
 <%= render "devise/shared/links" %>

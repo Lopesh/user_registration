@@ -10,6 +10,17 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require admin/datatables/dataTables.bootstrap4.min.css
+ *= require admin/datatables/responsive.bootstrap4.min.css
+ *= require admin/datatables/buttons.bootstrap4.min.css
+ *= require admin/datatables/select.bootstrap4.min.css
+ *= require admin/select2.min
+ *= require admin/bootstrap-material.min
+ *= require admin/bootstrap-datepicker.min
+ *= require admin/bootstrap-datetimepicker.min
+ *= require admin/app-material.min
+
+ *= require admin/icons
  *= require_tree .
  *= require_self
  */
