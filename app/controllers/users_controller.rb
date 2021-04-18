@@ -10,10 +10,12 @@ class UsersController < ApplicationController
     end
 
     def update
-        if @user.update_attributes(user_params)
-            redirect_to users_path
-        else
-            redirect_to edit_user_path(@user), flash: { error: @user.errors.full_messages.join(" <br/> ") } 
+        respond_to do |format|
+            if @user.update(user_params)
+                format.html { redirect_to edit_user_path(@user), flash: { notice: 'User updated successfully created.' } }
+            else
+                format.html { redirect_to edit_user_path(@user), flash: { error: @user.errors.full_messages.join(" <br/> ") } }
+            end
         end
     end
     

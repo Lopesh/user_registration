@@ -24,7 +24,9 @@
                <th>Name</th>
                <th>Email</th>
                <th>Address</th>
-               <th style="width: 15%;">Manage</th>
+               <% if current_user.admin? %>
+                  <th style="width: 15%;">Manage</th>
+               <% end %>
               </tr>
             </thead>
             <tbody>
@@ -33,11 +35,13 @@
                   <td><%= user.name %></td>
                   <td><%= user.email %></td>
                   <td><%= full_address(user.profile) %></td>
-                  <td>
-                    <%= link_to(edit_user_path(user),:class=>"action-icon") do %>
-                      <i class="mdi mdi-square-edit-outline"></i>
-                    <% end %>
-                  </td>
+                  <% if current_user.admin? %>
+                    <td>
+                      <%= link_to(edit_user_path(user),:class=>"action-icon") do %>
+                        <i class="mdi mdi-square-edit-outline"></i>
+                      <% end %>
+                    </td>
+                  <% end %>
                 </tr>
               <% end %>
             </tbody>

@@ -1,10 +1,11 @@
+
 <div class="form-group col-md-4">
     <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: false, autocomplete: "email", class: "form-control" %>
+    <%= f.text_field :name, readonly: fields_editable?(f.object), class: "form-control" %>
 </div>
 <div class="form-group col-md-4">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: false, autocomplete: "email", class: "form-control" %>
+    <%= f.email_field :email, readonly: fields_editable?(f.object), class: "form-control" %>
 </div>
 
 <%= f.fields_for :profile, @profile  do |profile_fields| %>
