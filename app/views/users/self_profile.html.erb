@@ -3,15 +3,18 @@
     <div class="col-md-12 col-lg-12 col-xl-5">
       <div class="card bg-pattern">
         <div class="card-body p-4">
-          <%= form_for(@user, url: "/users/#{@user.id}") do |f| %>
-            <div class="row">
-              <%= render partial: 'user_profile_form', locals: {f: f }%>
-            </div>
+        <div class="form-group">
+            <%= image_tag get_user_profile_picture, height: 300, width: 300, class: 'user_profile'%>
+        </div>
+        <%= form_for(@user, url: "/users/#{@user.id}") do |f| %>
+          <div class="row">
+            <%= render partial: 'user_profile_form', locals: {f: f }%>
+          </div>
             
-            <div class="actions">
-              <%= f.submit "Update Profile", class: 'btn btn-primary' %>
-            </div>
-          <% end %>
+          <div class="actions">
+            <%= f.submit "Update Profile", class: 'btn btn-primary' %>
+          </div>
+        <% end %>
         </div>
       </div>
     </div>

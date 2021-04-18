@@ -7,5 +7,7 @@ class User < ApplicationRecord
 
   accepts_nested_attributes_for :profile
   
+  validates :email,:name, presence: true
+  
   enum role: { admin: 1 , normal_user: 2 }
 end

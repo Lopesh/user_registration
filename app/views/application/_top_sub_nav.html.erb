@@ -6,10 +6,11 @@
             <li class="nav-item">
               <%= top_navbar_elements("Profile", self_profile_user_path(current_user), {anchor_class: "nav-link", icon_class: ""})%>
             </li>
-            <li class="nav-item">
-              <%= top_navbar_elements("Users", users_path, {anchor_class: "nav-link", icon_class: ""})%>
-            </li>
-           
+            <% if current_user.admin? %>
+              <li class="nav-item">
+                <%= top_navbar_elements("Users", users_path, {anchor_class: "nav-link", icon_class: ""})%>
+              </li>
+            <% end %>
         </ul>
         <!-- end navbar-->
       </div>
