@@ -2,7 +2,7 @@ class UsersController < ApplicationController
     before_action :set_user, on: [:edit, :update, :self_profile]
 
     def index
-        @users = User.all.order(id: :desc)
+        @users = User.without_admin.order(id: :desc)
     end
     
     def edit

@@ -10,4 +10,6 @@ class User < ApplicationRecord
   validates :email,:name, presence: true
   
   enum role: { admin: 1 , normal_user: 2 }
+
+  scope :without_admin ,-> { where(role: 2)}
 end
