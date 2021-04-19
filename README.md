@@ -1,23 +1,9 @@
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Project Setup:
 
-Things you may want to cover:
+* Ruby Version: 2.7.0
 
-* Ruby version
+* Rails Version: 6.0.3
 
-* System dependencies
+Run the DB Seeds File to create Admin User with Profile by following command:
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
+rake db:seed
