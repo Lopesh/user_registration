@@ -6,22 +6,13 @@
           <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
             
             <span class="pro-user-name ml-1">
-            <%= current_user.email %> <i class="mdi mdi-chevron-down"></i>
+            <%= current_user.email %> <i class="fas fa-chevron-down"></i>
             </span>
           </a>
           <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
-            <!-- item-->
-            <div class="dropdown-header noti-title">
-              <h6 class="text-overflow m-0">Welcome !</h6>
-            </div>
-            <!-- item-->
-            <a href="#" class="dropdown-item notify-item">
-              <i class="fe-user"></i>
-              <span>My Account</span>
-            </a>
             <div class="dropdown-divider"></div>
             <!-- item-->
-            <%= link_to '<i class="fe-log-out"></i> Logout'.html_safe, destroy_user_session_path, :method=>'delete' ,:class=>"dropdown-item notify-item"%>
+            <%= link_to '<i class="fas fa-cog"></i> Logout'.html_safe, destroy_user_session_path, :method=>'delete' ,:class=>"dropdown-item notify-item"%>
             </a>
           </div>
         </li>

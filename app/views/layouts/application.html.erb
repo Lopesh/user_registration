@@ -4,10 +4,11 @@
     <title>UserRegistration</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <style type="text/css" >
-      .action-icon {
-        border: 1px solid red
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <style>
+      th{
+        font-weight: bold;
       }
     </style>
   </head>
@@ -32,7 +33,7 @@
     </div>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <%= javascript_pack_tag 'admin','data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'admin' %>
     <%= yield :javascript %>
   </body>
 </html>

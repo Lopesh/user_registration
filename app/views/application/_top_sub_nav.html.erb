@@ -4,11 +4,11 @@
       <div class="collapse navbar-collapse" id="topnav-menu-content">
         <ul class="navbar-nav">
             <li class="nav-item">
-              <%= top_navbar_elements("Profile", self_profile_user_path(current_user), {anchor_class: "nav-link", icon_class: ""})%>
+              <%= top_navbar_elements("Profile", self_profile_user_path(current_user), {anchor_class: "nav-link", icon_class: "fas fa-id-badge"})%>
             </li>
             <% if current_user.admin? %>
               <li class="nav-item">
-                <%= top_navbar_elements("Users", users_path, {anchor_class: "nav-link", icon_class: ""})%>
+                <%= top_navbar_elements("Users", users_path, {anchor_class: "nav-link", icon_class: "fas fa-users"})%>
               </li>
             <% end %>
         </ul>

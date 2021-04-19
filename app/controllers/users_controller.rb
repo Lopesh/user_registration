@@ -2,7 +2,7 @@ class UsersController < ApplicationController
     before_action :set_user, on: [:edit, :update, :self_profile]
 
     def index
-        @users = User.all.order(id: :desc)    
+        @users = User.all.order(id: :desc)
     end
     
     def edit
@@ -33,7 +33,7 @@ class UsersController < ApplicationController
           :email, 
           :password, 
           :password_confirmation,
-          profile_attributes: [ :address_line, :street, :landmark, :city, :state, :pin_code, :avatar, :id ]
+          profile_attributes: [ :address_line, :street, :landmark, :city, :state, :pin_code, :avatar, :id, :phone_number ]
         )
       end  
 end

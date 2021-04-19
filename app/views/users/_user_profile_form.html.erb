@@ -10,28 +10,32 @@
 
 <%= f.fields_for :profile, @profile  do |profile_fields| %>
     <div class="form-group col-md-4">
+        <%= profile_fields.label :phone_number %>
+        <%= profile_fields.text_field :phone_number, class: "form-control" %>
+    </div>
+    <div class="form-group col-md-4">
         <%= profile_fields.label :address_line %>
-        <%= profile_fields.text_field :address_line, class: "form-control" %>
+        <%= profile_fields.text_field :address_line, readonly: admin_fields_editable?(f.object), class: "form-control" %>
     </div>
     <div class="form-group col-md-4">
         <%= profile_fields.label :street %>
-        <%= profile_fields.text_field :street, class: "form-control"  %>
+        <%= profile_fields.text_field :street, readonly: admin_fields_editable?(f.object), class: "form-control"  %>
     </div>
     <div class="form-group col-md-4">
         <%= profile_fields.label :landmark %>
-        <%= profile_fields.text_field :landmark, class: "form-control"  %>
+        <%= profile_fields.text_field :landmark, readonly: admin_fields_editable?(f.object), class: "form-control"  %>
     </div>
     <div class="form-group col-md-4">
         <%= profile_fields.label :city %>
-        <%= profile_fields.text_field :city, class: "form-control"  %>
+        <%= profile_fields.text_field :city, readonly: admin_fields_editable?(f.object), class: "form-control"  %>
     </div>
     <div class="form-group col-md-4">
         <%= profile_fields.label :state %>
-        <%= profile_fields.text_field :state, class: "form-control"  %>
+        <%= profile_fields.text_field :state, readonly: admin_fields_editable?(f.object), class: "form-control"  %>
     </div>
     <div class="form-group col-md-4">
         <%= profile_fields.label :pin_code %>
-        <%= profile_fields.text_field :pin_code, class: "form-control"  %>
+        <%= profile_fields.text_field :pin_code, readonly: admin_fields_editable?(f.object), class: "form-control"  %>
     </div>
     <div class="form-group col-md-4">
         <%= profile_fields.label :avatar %>

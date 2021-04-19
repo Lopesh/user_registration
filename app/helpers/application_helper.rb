@@ -12,6 +12,10 @@ module ApplicationHelper
         current_user&.profile&.avatar&.url.present? ? current_user&.profile&.avatar&.url : "users/img_avatar.png"
     end
     
+    def admin_fields_editable?(user)
+        current_user.id == user.id && user.admin?
+    end
+
     def fields_editable?(user)
         current_user.id == user.id
     end
