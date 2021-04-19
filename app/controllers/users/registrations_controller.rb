@@ -11,7 +11,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
             :email, 
             :password, 
             :password_confirmation,
-            profile_attributes: [ :address_line, :street, :landmark, :city, :state, :pin_code, :avatar ]
+            profile_attributes: [ :address_line, :street, :landmark, :city, :state, :pin_code, :avatar, :phone_number ]
           )
       end
 end
