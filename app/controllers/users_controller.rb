@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
     before_action :set_user, on: [:edit, :update, :self_profile]
+    before_action :set_current_user
 
     def index
         @users = User.without_admin.order(id: :desc)
@@ -27,6 +28,10 @@ class UsersController < ApplicationController
           @user = User.find_by(id: params[:id])
       end
 
+      def set_current_user
+          ApplicationRecord.current_user = current_user
+      end
+      
       def user_params
         params.require(:user).permit(
           :name,
